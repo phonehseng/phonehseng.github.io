@@ -4,7 +4,7 @@ Double-click `index.html` to open it in your browser. The design, project descri
 
 **Editing the page**
 
-Everything you would change lives near the top of the `<script>` block in `index.html`: the "right now" lines, the fact pills, and the scrapbook list. Images, logos, and the résumé PDF are embedded at the very bottom of the file so the page works as a single file; leave that block alone. Videos are too large to embed, so they stay in the `media` folder and must be uploaded alongside `index.html`.
+Everything you would change lives near the top of the `<script>` block in `index.html`: the "right now" lines, the fact pills, and the scrapbook list. Images, logos, and the résumé PDF are embedded at the very bottom of the file so the page works as a single file; leave that block alone. Videos are too large to embed, so they sit next to `index.html` as plain files and must be uploaded with it.
 
 **Update your résumé or wording**
 
@@ -17,7 +17,7 @@ You can edit project titles, descriptions, and links directly in the HTML. Proje
 
 Your HTML file needs a host: a service that makes the files available online. GitHub Pages fits this plain HTML website and is available for public repositories on GitHub Free. Your domain's DNS settings then point visitors to that host. You can keep the domain where you purchased it. [GitHub Pages setup](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
-1. **Upload the website.** Create a public GitHub repository named `phonehseng.github.io`. Upload `index.html` and any media folders you added. The original résumé is embedded, so a separate PDF is only needed if you switch to the replacement method above. Keep `index.html` at the top level; upload the contents, not an enclosing folder or ZIP. Include an empty `.nojekyll` file to serve the static files without Jekyll processing. [Create a Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+1. **Upload the website.** Create a public GitHub repository named `phonehseng.github.io`. Upload `index.html`, `.nojekyll`, and any video files that sit next to it. The original résumé is embedded, so a separate PDF is only needed if you switch to the replacement method above. Keep `index.html` at the top level; upload the contents, not an enclosing folder or ZIP. Include an empty `.nojekyll` file to serve the static files without Jekyll processing. [Create a Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 2. **Turn on hosting.** In the repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then **main** and **/(root)**, and click **Save**. Changes committed to that branch update the site. Check the published address shown on this page. [Configure publishing](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 
