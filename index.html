@@ -192,9 +192,14 @@
       transform: rotate(65deg);
     }
 
-    .mascot-button { border: 0; padding: 20px; background: transparent; width: 205px; height: 205px; position: relative; z-index: 1; }
-    .mascot { width: 100%; height: 100%; filter: drop-shadow(0 12px 0 rgba(36, 40, 32, .07)); transition: transform .2s; }
-    .mascot-button:hover .mascot { transform: rotate(-7deg) translateY(-5px); }
+    .mascot-button { border: 0; padding: 20px; background: transparent; width: 205px; height: 205px; position: relative; z-index: 1; transition: transform .2s; }
+    .mascot-button:hover { transform: rotate(-7deg) translateY(-5px); }
+    /* the bird drifts up and down on its own, the reduced motion rule further down switches this off */
+    .mascot { width: 100%; height: 100%; filter: drop-shadow(0 12px 0 rgba(36, 40, 32, .07)); animation: float 3.4s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
     /* hokie maroon, the same in both themes */
     .mascot .body { fill: #861f41; }
 
