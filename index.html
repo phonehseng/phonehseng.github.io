@@ -703,7 +703,7 @@
 
           <article class="project">
             <!-- the sketch stays as a fallback, the screenshot from the assets block is placed over it -->
-            <div class="project-art art-game" data-shot="wildmoor" role="img" aria-label="Legend of Wildmoor title screen">
+            <div class="project-art art-game" data-shot="wildmoor" data-clip="wildmoor.mp4" role="img" aria-label="Legend of Wildmoor title screen">
               <span class="art-corner">01 — PLAY</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
                 <path d="M20 147H280M50 147V137H108V147M169 147V121H230V147" stroke="#617159" stroke-width="1.5"/>
@@ -727,7 +727,7 @@
           </article>
 
           <article class="project">
-            <div class="project-art art-bot" data-shot="horrorBot" role="img" aria-label="Five Nights at Freddy’s camera view">
+            <div class="project-art art-bot" data-shot="horrorBot" data-clip="horror-game-bot.mp4" role="img" aria-label="Five Nights at Freddy’s camera view">
               <span class="art-corner">02 — AUTOMATE</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
                 <rect x="46" y="28" width="208" height="120" rx="5" fill="#30382f"/>
@@ -753,7 +753,7 @@
           </article>
 
           <article class="project">
-            <div class="project-art art-network" data-shot="automationLab" role="img" aria-label="Python automation code on GitHub">
+            <div class="project-art art-network" data-shot="automationLab" data-clip="automation-lab.mp4" role="img" aria-label="Python automation code on GitHub">
               <span class="art-corner">03 — TINKER</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
                 <rect x="45" y="40" width="140" height="90" rx="4" fill="#342e26" stroke="#95816b" stroke-width="1.5"/>
@@ -949,6 +949,14 @@
     const byId = id => document.getElementById(id);
     const pad = n => String(n).padStart(2, '0');
 
+    // project clips only run while they are on screen
+    const clipWatcher = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.play().catch(() => {});
+        else entry.target.pause();
+      });
+    }, { threshold: 0.2 });
+
     const iconVideo = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="3"/><path d="M21 18l10 6-10 6Z"/></svg>';
     const iconPhoto = '<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" aria-hidden="true"><rect x="7" y="7" width="34" height="34" rx="2" transform="rotate(-6 24 24)"/><path d="M12 32l9-10 7 6 6-5 5 8"/><circle cx="29" cy="16" r="3"/></svg>';
 
@@ -988,6 +996,24 @@
         img.src = value;
         art.append(img);
         art.classList.add('has-shot');
+
+        // a short muted clip loops over the still where one exists, like a gif but far smaller
+        // the still stays underneath as the poster and as the fallback if the clip cannot load
+        const clip = art.dataset.clip;
+        if (!clip || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const video = document.createElement('video');
+        video.className = 'project-shot';
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.autoplay = true;
+        video.preload = 'metadata';
+        video.poster = value;
+        video.setAttribute('aria-hidden', 'true');
+        video.addEventListener('error', () => video.remove(), { once: true });
+        video.src = clip;
+        art.append(video);
+        clipWatcher.observe(video);
       });
     }
 
