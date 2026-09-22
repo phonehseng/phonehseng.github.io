@@ -301,7 +301,11 @@
     .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .project { min-width: 0; display: flex; flex-direction: column; }
 
+    .project-art-link { display: block; text-decoration: none; color: inherit; }
+    .project-art-link:hover .project-art { border-color: var(--accent); }
+    .project-art-link:focus-visible { outline-offset: 4px; }
     .project-art {
+      transition: border-color .2s;
       aspect-ratio: 1.5;
       border: 1px solid var(--line);
       border-radius: 4px;
@@ -724,6 +728,8 @@
 
           <article class="project">
             <!-- the sketch stays as a fallback, the screenshot from the assets block is placed over it -->
+            <!-- the game itself lives on this site, so the clip opens it rather than the repo -->
+            <a class="project-art-link" href="https://phonehseng.com/legend-of-wildmoor/" target="_blank" rel="noopener noreferrer" aria-label="Play Legend of Wildmoor">
             <div class="project-art art-game" data-shot="wildmoor" data-clip="wildmoor.mp4" role="img" aria-label="Legend of Wildmoor title screen">
               <span class="art-corner">01 — PLAY</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
@@ -738,6 +744,7 @@
                 <path d="M29 32H65M47 25V39M231 30H253M242 24V36" stroke="#b4c19e" stroke-width="1.3"/>
               </svg>
             </div>
+            </a>
             <div class="project-meta"><span>GAME DEVELOPMENT</span><span>Public repo</span></div>
             <h3>Legend of Wildmoor</h3>
             <p>A 3D open-world browser game with procedural world generation, quests and progression, boss encounters, and save/load. Serverless peer-to-peer multiplayer lets friends join by code and fight bosses together.</p>
@@ -748,6 +755,7 @@
           </article>
 
           <article class="project">
+            <a class="project-art-link" href="https://github.com/phonehseng/Fnaf-automations" target="_blank" rel="noopener noreferrer" aria-label="Open Horror Game Bot on GitHub">
             <div class="project-art art-bot" data-shot="horrorBot" data-clip="horror-game-bot.mp4" role="img" aria-label="Five Nights at Freddy’s camera view">
               <span class="art-corner">02 — AUTOMATE</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
@@ -764,6 +772,7 @@
                 <circle cx="234" cy="45" r="2" fill="#d8a07d"/>
               </svg>
             </div>
+            </a>
             <div class="project-meta"><span>COMPUTER VISION</span><span>Public repo</span></div>
             <h3>Horror Game Bot</h3>
             <p>A Python bot that plays Five Nights at Freddy’s on its own, using OpenCV to watch the screen in real time and power-efficient decision logic to manage cameras, doors, and lights.</p>
@@ -774,6 +783,8 @@
           </article>
 
           <article class="project">
+            <!-- the clip itself is a link, the same target as the button below it -->
+            <a class="project-art-link" href="https://github.com/phonehseng/NNprojectpython" target="_blank" rel="noopener noreferrer" aria-label="Open Python Automation Lab on GitHub">
             <div class="project-art art-network" data-shot="automationLab" data-clip="automation-lab.mp4" role="img" aria-label="Python automation code on GitHub">
               <span class="art-corner">03 — TINKER</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
@@ -789,6 +800,7 @@
                 <path d="M214 42v12M208 48h12" stroke="#af926f"/>
               </svg>
             </div>
+            </a>
             <div class="project-meta"><span>AUTOMATION EXPERIMENTS</span><span>Public repo</span></div>
             <h3>Python Automation Lab</h3>
             <p>A collection of browser and desktop experiments: finding controls, entering text, retrying actions, and making repetitive tasks a little easier.</p>
