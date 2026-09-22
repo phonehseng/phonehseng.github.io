@@ -195,7 +195,8 @@
     .mascot-button { border: 0; padding: 20px; background: transparent; width: 205px; height: 205px; position: relative; z-index: 1; }
     .mascot { width: 100%; height: 100%; filter: drop-shadow(0 12px 0 rgba(36, 40, 32, .07)); transition: transform .2s; }
     .mascot-button:hover .mascot { transform: rotate(-7deg) translateY(-5px); }
-    .mascot .body { fill: var(--accent); }
+    /* hokie maroon, the same in both themes */
+    .mascot .body { fill: #861f41; }
 
     .art-label { position: absolute; font: 10px/1.4 var(--mono); color: var(--muted); letter-spacing: 1px; }
     .art-label.top { top: 0; left: 24px; }
@@ -356,6 +357,9 @@
     .experience time { font: 10px/1.7 var(--mono); color: var(--muted); padding-top: 4px; }
     .experience h3 { display: flex; align-items: center; gap: 10px; font-size: 15px; letter-spacing: -.15px; margin-bottom: 5px; }
     .experience p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 0; }
+    /* small tags for the classes listed under a school */
+    .courses { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 5px; }
+    .courses li { font: 9px var(--mono); border: 1px solid var(--line); border-radius: 3px; padding: 3px 7px; color: var(--muted); }
     .exp-logo { width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0; display: block; object-fit: cover; }
 
     .resume-link {
@@ -637,19 +641,26 @@
           <div class="sticker code" aria-hidden="true">&lt;/&gt;</div>
 
           <!-- the pixel mascot, it changes on its own every few seconds and on click -->
-          <button class="mascot-button" id="mascot-button" type="button" aria-label="Say hello to the pixel mascot" hidden>
+          <button class="mascot-button" id="mascot-button" type="button" aria-label="Say hello to the pixel Hokie Bird" hidden>
+            <!-- a blocky hokie bird, maroon feathers with a crest, orange bill and feet, red wattle -->
             <svg class="mascot" viewBox="0 0 160 160" aria-hidden="true" shape-rendering="crispEdges">
-              <path class="body" d="M50 20H110V30H130V50H140V100H130V120H110V140H90V120H70V140H50V120H30V100H20V60H30V40H50Z"/>
-              <path fill="#fff9e9" d="M45 60H65V85H45ZM95 60H115V85H95Z"/>
-              <path class="face" fill="#242820" d="M55 65H65V80H55ZM95 65H105V80H95ZM65 95H95V105H65Z"/>
-              <path fill="#f6c09b" opacity=".7" d="M35 90H50V100H35ZM110 90H125V100H110Z"/>
+              <path class="body" d="M60 5H70V15H60ZM85 0H95V15H85ZM105 5H115V15H105ZM45 15H125V25H135V45H145V105H135V120H35V105H25V45H35V25H45Z"/>
+              <path fill="#fff9e9" d="M45 35H65V60H45ZM105 35H125V60H105Z"/>
+              <path class="face" fill="#242820" d="M50 42H60V55H50ZM110 42H120V55H110Z"/>
+              <path fill="#e5751f" d="M35 65H135V85H125V95H45V85H35Z"/>
+              <path fill="#a34d12" d="M45 82H125V86H45Z"/>
+              <path fill="#c8102e" d="M100 92H115V115H100Z"/>
+              <path fill="#e5751f" d="M50 120H65V130H50ZM95 120H110V130H95ZM30 130H75V145H30ZM85 130H130V145H85Z"/>
             </svg>
           </button>
           <noscript>
-            <svg width="210" height="210" viewBox="0 0 160 160" role="img" aria-label="A friendly pixel character">
-              <path fill="#b7422b" d="M50 20H110V30H130V50H140V100H130V120H110V140H90V120H70V140H50V120H30V100H20V60H30V40H50Z"/>
-              <path fill="#fff9e9" d="M45 60H65V85H45ZM95 60H115V85H95Z"/>
-              <path fill="#242820" d="M65 95H95V105H65Z"/>
+            <svg width="210" height="210" viewBox="0 0 160 160" role="img" aria-label="A pixel art Hokie Bird">
+              <path fill="#861f41" d="M60 5H70V15H60ZM85 0H95V15H85ZM105 5H115V15H105ZM45 15H125V25H135V45H145V105H135V120H35V105H25V45H35V25H45Z"/>
+              <path fill="#fff9e9" d="M45 35H65V60H45ZM105 35H125V60H105Z"/>
+              <path fill="#242820" d="M50 42H60V55H50ZM110 42H120V55H110Z"/>
+              <path fill="#e5751f" d="M35 65H135V85H125V95H45V85H35Z"/>
+              <path fill="#c8102e" d="M100 92H115V115H100Z"/>
+              <path fill="#e5751f" d="M50 120H65V130H50ZM95 120H110V130H95ZM30 130H75V145H30ZM85 130H130V145H85Z"/>
             </svg>
           </noscript>
 
@@ -799,7 +810,15 @@
               <time>2026 — 2028</time>
               <div>
                 <h3><img class="exp-logo" data-asset="logoVt" alt="">Virginia Tech</h3>
-                <p>B.S. in Computer Science. Software design, data structures, and computer organization.</p>
+                <p>B.S. in Computer Science. Coursework so far:</p>
+                <ul class="courses" aria-label="Coursework">
+                  <li>Software Design &amp; Data Structures</li>
+                  <li>Intro to Software Design</li>
+                  <li>Problem Solving in CS</li>
+                  <li>Computer Organization I</li>
+                  <li>Foundations of Engineering Practice</li>
+                  <li>Calculus I &amp; II</li>
+                </ul>
               </div>
             </li>
             <li>
@@ -904,14 +923,14 @@
     // how often the mascot changes on its own, in milliseconds
     const mascotEvery = 5000;
 
-    // the faces it cycles through, paired with a body colour
-    // an empty colour means keep the site's accent green, and the shapes stay blocky on purpose
-    const looks = [
-      { body: '',        face: 'M55 65H65V80H55ZM95 65H105V80H95ZM65 95H95V105H65Z' },
-      { body: '#e0a458', face: 'M45 70H65V78H45ZM95 65H105V80H95ZM68 95H92V105H68Z' },
-      { body: '#8f86c9', face: 'M52 62H64V74H52ZM96 62H108V74H96ZM70 92H90V108H70Z' },
-      { body: '#5fa8a0', face: 'M45 68H65V76H45ZM95 68H115V76H95ZM62 95H98V107H62Z' },
-      { body: '#d4756b', face: 'M55 68H65V78H55ZM95 68H105V78H95ZM66 96H94V104H66Z' }
+    // the eyes it cycles through, only the pupils move so the bird keeps its colours
+    // in order: looking ahead, a wink, wide eyed, a side glance, and half asleep
+    const faces = [
+      'M50 42H60V55H50ZM110 42H120V55H110Z',
+      'M45 46H65V52H45ZM110 42H120V55H110Z',
+      'M52 38H58V46H52ZM112 38H118V46H112Z',
+      'M55 42H65V55H55ZM115 42H125V55H115Z',
+      'M45 48H65V60H45ZM105 48H125V60H105Z'
     ];
 
     // what the mascot says, in order
@@ -1195,7 +1214,6 @@
       const button = byId('mascot-button');
       const speech = byId('mascot-speech');
       const text = byId('mascot-text');
-      const body = button.querySelector('.body');
       const face = button.querySelector('.face');
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
       let step = 0;
@@ -1207,9 +1225,7 @@
         speech.setAttribute('aria-live', byHand ? 'polite' : 'off');
         text.textContent = greetings[step % greetings.length];
 
-        const look = looks[step % looks.length];
-        body.style.fill = look.body;
-        face.setAttribute('d', look.face);
+        face.setAttribute('d', faces[step % faces.length]);
 
         if (!reduced.matches && button.animate) {
           button.animate(
