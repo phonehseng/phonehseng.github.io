@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone Hseng - Resume</title>
+<style>
+  @page { size: letter; margin: 0.36in 0.5in 0.32in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Times New Roman", Times, "Liberation Serif", serif; font-size: 10.4pt; line-height: 1.17; color: #000; }
+  a { color: #000; }
+  h1 { font-size: 19pt; text-align: center; margin: 0; }
+  .contact { text-align: center; font-size: 9.6pt; margin: 1px 0 6px; }
+  h2 { font-size: 11.2pt; font-variant: small-caps; margin: 7px 0 3px; padding-bottom: 1px; border-bottom: 1px solid #000; letter-spacing: .2px; }
+  .row { display: flex; justify-content: space-between; gap: 12px; }
+  .entry { margin-top: 3px; }
+  .entry .row:first-child { font-weight: bold; }
+  .entry .row:first-child span:last-child { font-weight: normal; }
+  .sub { font-style: italic; }
+  ul { margin: 1px 0 0; padding-left: 22px; }
+  li { margin: 0; }
+  p { margin: 0; }
+  .url { font-weight: normal; font-size: 9.8pt; }
+</style>
+</head>
+<body>
+  <h1>Phone Hseng</h1>
+  <p class="contact">Reston, VA | phone@vt.edu | 301-978-6635 | <a href="https://github.com/phonehseng">GitHub</a> | <a href="https://phonehseng.com">phonehseng.com</a></p>
+
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="row"><span>B.S. in Computer Science</span><span>Aug 2026 – May 2028</span></div>
+    <div class="row sub"><span>Virginia Tech</span><span>Blacksburg, VA</span></div>
+    <p><b>Relevant Coursework:</b> Software Design and Data Structures, Intro to Software Design, Intro to Problem Solving in CS, Intro to Computer Organization I, Foundations of Engineering Practice, Calculus I, Calculus II</p>
+  </div>
+
+  <h2>Experience</h2>
+  <div class="entry">
+    <div class="row"><span>Service Technician</span><span>Apr 2026 – Aug 2026</span></div>
+    <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
+    <ul>
+      <li>Diagnosed and repaired customer gaming PCs, laptops, and Apple devices, performing board-level diagnostics, hardware/software testing, game performance and stability testing, and GPU/driver troubleshooting</li>
+      <li>Resolved 12+ repair tickets per day end-to-end, from intake and diagnosis through repair, testing, and customer handoff</li>
+      <li>Earned vendor-authorized repair certifications from Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS</li>
+      <li>Advised customers on hardware upgrades, component compatibility, and custom system builds</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>Customer Service Representative</span><span>Aug 2025 – Apr 2026</span></div>
+    <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
+    <ul>
+      <li>Processed 20+ transactions per hour (chain average: 16.5) while maintaining a 91% customer capture rate across PC components, prebuilt systems, and peripherals</li>
+      <li>Ranked in the top 100 warranty sellers chainwide, attaching service plans on 13% of transactions vs. a 6.8% chain average and generating $5.03 in plan revenue per customer (chain average: $2.70)</li>
+      <li>Scored 100/100 in every measured customer satisfaction category (greeting, welcome, transaction efficiency, thank-you), above chain averages of 90-95</li>
+      <li>Received the store's GEAR Award (Employee of the Month) for December 2025; promoted to Service Technician in April 2026</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>Member Services Representative</span><span>Oct 2024 – Aug 2025</span></div>
+    <div class="row sub"><span>Planet Fitness</span><span>Chantilly, VA</span></div>
+    <ul>
+      <li>Handled front-desk operations including member check-in, enrollment, billing transactions, and cancellations</li>
+      <li>Resolved member account and billing questions in person and by phone, escalating to club management when needed</li>
+    </ul>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="entry">
+    <div class="row"><span>Clear Home <span class="sub" style="font-weight:normal">| Python, Flask, Gemma 4, Google Cloud Run, Google Maps</span></span><span class="url">clearhome.live | github.com/phonehseng/clearhome</span></div>
+    <ul>
+      <li>Built an AI housing assistant with a team of four at GDG Build with AI × Hacktoberfest 2026 that finds verified affordable homes, shelters, and rent help in Northern Virginia and Blacksburg from plain-language questions</li>
+      <li>Served Gemma 4 from our own Cloud Run L4 GPU with a Gemini API fallback, streaming answers grounded only in a hand-verified list of 400+ records so the assistant cannot invent listings</li>
+      <li>Added map search and measured walking/transit times with Google Maps APIs, plus a daily job that finds new listings, checks their sources, and redeploys</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>Legend of Wildmoor <span class="sub" style="font-weight:normal">| JavaScript, Three.js, WebRTC</span></span><span class="url">github.com/phonehseng/legend-of-wildmoor</span></div>
+    <ul>
+      <li>Built a 3D open-world browser game with procedural world generation, quest and progression systems, boss encounters, and a save/load persistence layer</li>
+      <li>Implemented serverless peer-to-peer multiplayer with join-by-code sessions, synchronizing boss fights across players while keeping each player's quests and stats independent</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>Game-Playing Bots <span class="sub" style="font-weight:normal">| Python, OpenCV, OCR</span></span><span class="url">github.com/phonehseng/Fnaf-automations | github.com/phonehseng/btd6bot</span></div>
+    <ul>
+      <li>Built a bot that plays Five Nights at Freddy's from the screen alone, timing door, light, and camera checks to the game's animatronic movement timers to finish nights with no jumpscares and maximum power left</li>
+      <li>Built a bot that plays Bloons TD 6 unattended overnight, choosing maps by expected wins per hour, leveling a fresh account, and recovering from crashes and hangs through a watchdog supervisor</li>
+    </ul>
+  </div>
+
+  <h2>Skills</h2>
+  <p><b>Languages:</b> Python, JavaScript, C, C++</p>
+  <p><b>Technologies:</b> Flask, Google Cloud Run, Gemma/Gemini APIs, Google Maps Platform, Three.js, WebGL, OpenCV, Unity, Linux (Ubuntu), Docker, home networking</p>
+  <p><b>Tools:</b> Git, Visual Studio, PyCharm, Microsoft Office, Astea Alliance</p>
+  <p><b>Hardware:</b> Diagnostics and repair of custom PCs, laptops, iPhones, and MacBooks, component compatibility and system builds</p>
+  <p><b>Certifications:</b> Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS authorized repair, CPR</p>
+</body>
+</html>
