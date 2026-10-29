@@ -811,7 +811,8 @@
       mask-image: linear-gradient(to right, #000 0, #000 calc(50% - 540px), transparent calc(50% - 490px), transparent calc(50% + 490px), #000 calc(50% + 540px), #000 100%);
     }
 
-    /* ---------- scrolling in: each section and card rises into place once, a row one after another. The script
+    /* ---------- scrolling in: each section and card rises into place as it comes into view, a row one after another,
+       and again every time it comes back (dropping down instead when it comes back from above). The script
        only adds .reveal when motion is welcome, so without it (or with reduced motion) everything just shows. ---------- */
     .reveal {
       opacity: 0;
@@ -819,6 +820,7 @@
       transition: opacity .7s cubic-bezier(.2, .7, .2, 1), transform .7s cubic-bezier(.2, .7, .2, 1);
       transition-delay: var(--reveal-delay, 0s);
     }
+    .reveal.above { transform: translateY(-22px); }
     .reveal.in { opacity: 1; transform: none; }
 
     /* ---------- the mascot, livelier: eyes that blink and follow the pointer, and a shadow on the ground that
@@ -1616,18 +1618,24 @@
 
     // ---------- scrolling in ----------
 
-    // sections and cards rise into place the first time they scroll into view; cards in a row come in one after another
+    // sections and cards rise into place as they scroll into view, cards in a row one after another, and do it again
+    // every time they come back: once something is fully off screen it quietly resets (out of sight, so nothing vanishes)
     function wireReveal() {
       if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const seen = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('in');
-        seen.unobserve(entry.target);
+      const show = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in');
       }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      const reset = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) return;
+        entry.target.classList.remove('in');
+        // coming back from above it drops down; from below it rises up
+        entry.target.classList.toggle('above', entry.boundingClientRect.top < 0);
+      }), { threshold: 0 });
       const watch = (el, delay) => {
         el.classList.add('reveal');
         if (delay) el.style.setProperty('--reveal-delay', delay + 'ms');
-        seen.observe(el);
+        show.observe(el);
+        reset.observe(el);
       };
       document.querySelectorAll('.ticker, .now, main .section-head, .tools-label, .project-note, .about > div, .scrapbook-intro, .contact')
         .forEach(el => watch(el, 0));
