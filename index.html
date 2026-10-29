@@ -804,6 +804,12 @@
     @keyframes lily-glow { 0%, 100% { opacity: .42; } 50% { opacity: .85; } }
     @keyframes lily-glow-light { 0%, 100% { opacity: .26; } 50% { opacity: .55; } }
     @keyframes lily-bloom { 0%, 100% { opacity: .84; } 50% { opacity: 1; } }
+    /* lilies behind the text stay as faint as the water: the glow and the bright lilies show only in the margins
+       beside the 1000 px content column, fading out at its edges (so none glow on a phone, where text is full width) */
+    .pond-glow, .pond-blooms {
+      -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(50% - 540px), transparent calc(50% - 490px), transparent calc(50% + 490px), #000 calc(50% + 540px), #000 100%);
+      mask-image: linear-gradient(to right, #000 0, #000 calc(50% - 540px), transparent calc(50% - 490px), transparent calc(50% + 490px), #000 calc(50% + 540px), #000 100%);
+    }
 
     /* ---------- scrolling in: each section and card rises into place once, a row one after another. The script
        only adds .reveal when motion is welcome, so without it (or with reduced motion) everything just shows. ---------- */
