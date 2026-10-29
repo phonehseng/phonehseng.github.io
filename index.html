@@ -822,7 +822,10 @@
       transform: translate(var(--look-x, 0px), var(--look-y, 0px));
       transition: transform .14s ease-out;
     }
-    .mascot.blink .face { transform: translate(var(--look-x, 0px), var(--look-y, 0px)) scaleY(.12); }
+    /* a blink shuts the whole eye: the whites and the pupils squash into one thin line together */
+    .mascot .eyes { transform-box: fill-box; transform-origin: center; transition: transform .1s ease-out; }
+    .mascot.blink .eyes { transform: scaleY(.1); }
+    .mascot.blink .face { transform: translate(var(--look-x, 0px), 1px) scaleY(.1); }
     .mascot-button::after {
       content: '';
       position: absolute;
@@ -904,7 +907,7 @@
             <span class="mascot-float">
             <svg class="mascot" viewBox="0 0 160 160" aria-hidden="true" shape-rendering="crispEdges">
               <path class="body" d="M60 5H70V15H60ZM85 0H95V15H85ZM105 5H115V15H105ZM45 15H125V25H135V45H145V105H135V120H35V105H25V45H35V25H45Z"/>
-              <path fill="#fff9e9" d="M45 35H65V60H45ZM105 35H125V60H105Z"/>
+              <path class="eyes" fill="#fff9e9" d="M45 35H65V60H45ZM105 35H125V60H105Z"/>
               <path class="face" fill="#242820" d="M50 42H60V55H50ZM110 42H120V55H110Z"/>
               <path fill="#e5751f" d="M35 65H135V85H125V95H45V85H35Z"/>
               <path fill="#a34d12" d="M45 82H125V86H45Z"/>
