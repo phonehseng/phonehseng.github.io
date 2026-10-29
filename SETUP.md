@@ -42,3 +42,7 @@ Replace conflicting parking or old hosting records for `@` and `www`. Keep unrel
 To update the site later, upload the changed HTML and any new media or replacement résumé to the same repository. New versions can take up to ten minutes to appear. [Publishing updates](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 Hosting instructions checked against GitHub's documentation on September 14, 2026. The files are ready for you to publish; no website has been published and no domain settings have been changed.
+
+**Credits**
+
+`trophy.png` (the trophy on the award line and badges) is the Trophy from Microsoft's [Fluent Emoji](https://github.com/microsoft/fluentui-emoji), MIT License, resized to 72 px. `atlas.jpg` is a screenshot from the Atlas repository. `og-image.jpg` is a screenshot of the top of this page, shown when someone shares the link; retake it if the hero changes.
