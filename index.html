@@ -789,32 +789,21 @@
       .site-nav .resume-nav { padding: 6px 12px; border: 1px solid var(--line); }
       .award { font-size: 13px; }
     }
-    /* ---------- a faint Monet behind the page: Water Lilies (1906, Art Institute of Chicago, public domain). Fixed
-       behind everything and washed into the page colour, so it reads as texture, not as a picture. ---------- */
+    /* ---------- a faint Monet behind the page: Water Lilies (1906, Art Institute of Chicago, public domain). Three
+       layers lined up exactly: the painting washed into the page colour, a soft coral-to-pink glow around each red
+       lily that breathes slowly, and the lilies themselves, brighter than the water. The script lets the whole pond
+       drift a little as the page scrolls. ---------- */
     body { position: relative; isolation: isolate; }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background: url('water-lilies.jpg') center / cover no-repeat;
-      opacity: .1;
-      filter: saturate(.85);
-    }
-    :root[data-theme="light"] body::before { opacity: .17; }
-    /* the red and pink lilies on their own layer (cut from the same painting), lined up exactly over it and far
-       brighter, so they glow against the faint water */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background: url('water-lilies-blooms.webp') center / cover no-repeat;
-      opacity: .9;
-    }
-    :root[data-theme="light"] body::after { opacity: 1; }
+    .pond { position: fixed; inset: -70px 0; z-index: -1; pointer-events: none; will-change: transform; }
+    .pond > span { position: absolute; inset: 0; background-position: center; background-size: cover; background-repeat: no-repeat; }
+    .pond-water { background-image: url('water-lilies.jpg'); opacity: .1; filter: saturate(.85); }
+    .pond-glow { background-image: url('water-lilies-glow.webp'); opacity: .7; animation: lily-glow 5.2s ease-in-out infinite; }
+    .pond-blooms { background-image: url('water-lilies-blooms.webp'); opacity: .92; animation: lily-bloom 5.2s ease-in-out infinite; }
+    :root[data-theme="light"] .pond-water { opacity: .17; }
+    :root[data-theme="light"] .pond-glow { opacity: .45; animation-name: lily-glow-light; }
+    @keyframes lily-glow { 0%, 100% { opacity: .42; } 50% { opacity: .85; } }
+    @keyframes lily-glow-light { 0%, 100% { opacity: .26; } 50% { opacity: .55; } }
+    @keyframes lily-bloom { 0%, 100% { opacity: .84; } 50% { opacity: 1; } }
 
     /* ---------- scrolling in: each section and card rises into place once, a row one after another. The script
        only adds .reveal when motion is welcome, so without it (or with reduced motion) everything just shows. ---------- */
@@ -867,6 +856,8 @@
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <!-- the faint Monet behind everything (styles under "a faint Monet behind the page") -->
+  <div class="pond" aria-hidden="true"><span class="pond-water"></span><span class="pond-glow"></span><span class="pond-blooms"></span></div>
 
   <div class="wrap">
 
@@ -1598,6 +1589,25 @@
       document.addEventListener('keydown', event => { if (event.key === 'Escape' && !box.hidden) closeLightbox(); });
     }
 
+    // ---------- the pond behind the page ----------
+
+    // the painting drifts up a little as you scroll down, about 90 px from the top of the page to the bottom
+    function wirePond() {
+      const pond = document.querySelector('.pond');
+      if (!pond || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      let frame = 0;
+      const update = () => {
+        frame = 0;
+        const room = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+        const progress = Math.min(1, Math.max(0, window.scrollY / room));
+        pond.style.transform = 'translate3d(0, ' + (45 - progress * 90).toFixed(1) + 'px, 0)';
+      };
+      const soon = () => { if (!frame) frame = requestAnimationFrame(update); };
+      window.addEventListener('scroll', soon, { passive: true });
+      window.addEventListener('resize', soon);
+      update();
+    }
+
     // ---------- scrolling in ----------
 
     // sections and cards rise into place the first time they scroll into view; cards in a row come in one after another
@@ -1739,6 +1749,7 @@
       fillFacts();
       fillScrapbook();
       wireReveal();
+      wirePond();
       wireLightbox();
       wireMascot();
       wireTheme();
