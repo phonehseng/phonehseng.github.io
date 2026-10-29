@@ -808,11 +808,22 @@
     @keyframes lily-glow { 0%, 100% { opacity: .42; } 50% { opacity: .85; } }
     @keyframes lily-glow-light { 0%, 100% { opacity: .26; } 50% { opacity: .55; } }
     @keyframes lily-bloom { 0%, 100% { opacity: .84; } 50% { opacity: 1; } }
+
+    /* ---------- bigger on big screens: the page (not the Monet behind it, which stays at 100%) scales up to 150% on
+       wide monitors, in steps, as far as the 1000 px column still fits with room to spare; phones and laptops
+       stay as they are. The lily glow's clear zone above uses the same factor so it still matches the column. ---------- */
+    :root { --zoom: 1; }
+    @media (min-width: 1160px) { :root { --zoom: 1.1; } }
+    @media (min-width: 1260px) { :root { --zoom: 1.2; } }
+    @media (min-width: 1360px) { :root { --zoom: 1.3; } }
+    @media (min-width: 1460px) { :root { --zoom: 1.4; } }
+    @media (min-width: 1560px) { :root { --zoom: 1.5; } }
+    .wrap { zoom: var(--zoom); }
     /* lilies behind the text stay as faint as the water: the glow and the bright lilies show only in the margins
        beside the 1000 px content column, fading out at its edges (so none glow on a phone, where text is full width) */
     .pond-glow, .pond-blooms {
-      -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(50% - 540px), transparent calc(50% - 490px), transparent calc(50% + 490px), #000 calc(50% + 540px), #000 100%);
-      mask-image: linear-gradient(to right, #000 0, #000 calc(50% - 540px), transparent calc(50% - 490px), transparent calc(50% + 490px), #000 calc(50% + 540px), #000 100%);
+      -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(50% - 540px * var(--zoom)), transparent calc(50% - 490px * var(--zoom)), transparent calc(50% + 490px * var(--zoom)), #000 calc(50% + 540px * var(--zoom)), #000 100%);
+      mask-image: linear-gradient(to right, #000 0, #000 calc(50% - 540px * var(--zoom)), transparent calc(50% - 490px * var(--zoom)), transparent calc(50% + 490px * var(--zoom)), #000 calc(50% + 540px * var(--zoom)), #000 100%);
     }
 
     /* ---------- scrolling in: each section and card rises into place as it comes into view, a row one after another,
