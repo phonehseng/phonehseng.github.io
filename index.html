@@ -733,6 +733,10 @@
     }
     .project-art-link:hover .art-chip { background: linear-gradient(140deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .16) 60%, rgba(255, 255, 255, .28)); }
     .art-media { background: #151b2e; }
+    /* the FNAF demo's HUD (the bot's narration, the hour and night) runs along the top of the frame: keep the top in
+       view when the tile crops the picture, and move this tile's labels to the bottom corners so they don't cover it */
+    .hud-top .project-shot { object-position: 50% 0; }
+    .hud-top .art-chip, .project-art.hud-top .art-corner { top: auto; bottom: 10px; }
     /* over a light picture (Clear Home's map) the label is dark glass so it stays readable */
     .art-chip.on-light { background: linear-gradient(140deg, rgba(20, 32, 63, .74), rgba(20, 32, 63, .52)); border-color: rgba(255, 255, 255, .4); }
     .project-art-link:hover .art-chip.on-light { background: linear-gradient(140deg, rgba(20, 32, 63, .86), rgba(20, 32, 63, .64)); }
@@ -1059,7 +1063,7 @@
             <!-- two game-playing bots share this tile, one above the other -->
             <div class="stack-item">
             <a class="project-art-link" href="https://github.com/phonehseng/Fnaf-automations" target="_blank" rel="noopener noreferrer" aria-label="Open Horror Game Bot on GitHub">
-            <div class="project-art art-bot" data-shot="horrorBot" data-clip="horror-game-bot.webp" role="img" aria-label="The bot playing Custom Night 20/20/20/20, shutting a door just before an animatronic moves">
+            <div class="project-art art-bot hud-top" data-shot="horrorBot" data-clip="horror-game-bot.webp" role="img" aria-label="The bot playing Custom Night 20/20/20/20, shutting a door just before an animatronic moves">
               <span class="art-corner">04 — AUTOMATE</span>
               <span class="art-chip">GitHub ↗</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
