@@ -47,3 +47,4 @@ Hosting instructions checked against GitHub's documentation on September 14, 202
 
 `trophy.png` (the trophy on the award line and badges) is the Trophy from Microsoft's [Fluent Emoji](https://github.com/microsoft/fluentui-emoji), MIT License, resized to 72 px. `atlas.jpg` is a screenshot from the Atlas repository. `og-image.jpg` is a screenshot of the top of this page, shown when someone shares the link; retake it if the hero changes.
 `water-lilies.jpg` (the faint background) is *Water Lilies* by Claude Monet, 1906, from the Art Institute of Chicago (public domain; the museum shares its image under CC0), resized to 1400 px.
+`water-lilies-blooms.webp` is the red and pink lilies cut from that same painting (transparent everywhere else, colour boosted), laid exactly over it so they stand out.

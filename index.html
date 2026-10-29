@@ -803,6 +803,18 @@
       filter: saturate(.85);
     }
     :root[data-theme="light"] body::before { opacity: .17; }
+    /* the red and pink lilies on their own layer (cut from the same painting), lined up exactly over it and far
+       brighter, so they glow against the faint water */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: url('water-lilies-blooms.webp') center / cover no-repeat;
+      opacity: .9;
+    }
+    :root[data-theme="light"] body::after { opacity: 1; }
 
     /* ---------- scrolling in: each section and card rises into place once, a row one after another. The script
        only adds .reveal when motion is welcome, so without it (or with reduced motion) everything just shows. ---------- */
