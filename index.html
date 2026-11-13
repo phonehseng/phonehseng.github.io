@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d100e">
-  <meta name="description" content="Phone Hseng — computer science student at Virginia Tech who builds browser games, automates things in Python, fixes PCs, and plays guitar.">
+  <meta name="description" content="Phone Hseng — computer science student at Virginia Tech building desktop software in Rust and C++, machine learning projects, and self-hosted systems. Seeking software engineering internships.">
   <title>Phone Hseng — Coding and building</title>
   <link rel="icon" type="image/png" data-asset="avatar">
   <!-- link previews (iMessage, Discord, LinkedIn...): a big picture of the top of this page -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Phone Hseng">
   <meta property="og:title" content="Phone Hseng">
-  <meta property="og:description" content="Computer science at Virginia Tech. Clear Home won 1st place overall and Best Use of Google Cloud; also Atlas, game-playing bots, a 3D browser game and Windows tools.">
+  <meta property="og:description" content="Computer science at Virginia Tech. Clear Home won 1st place overall and Best Use of Google Cloud; also Letters, a Rust PDF editor, a from-scratch reinforcement learning lab, and systems tools in C++.">
   <meta property="og:url" content="https://phonehseng.com/">
   <meta property="og:image" content="https://phonehseng.com/og-image.jpg?v=3">
   <meta property="og:image:width" content="1200">
@@ -728,6 +728,8 @@
     }
     .project-art-link:hover .art-chip { background: linear-gradient(140deg, rgba(255, 255, 255, .4), rgba(255, 255, 255, .16) 60%, rgba(255, 255, 255, .28)); }
     .art-media { background: #151b2e; }
+    .art-doc { background: #e6e9ef; }
+    .art-ml { background: #151b2e; }
     /* the FNAF demo's HUD (the bot's narration, the hour and night) runs along the top of the frame: keep the top in
        view when the tile crops the picture, and move this tile's labels to the bottom corners so they don't cover it */
     .hud-top .project-shot { object-position: 50% 0; }
@@ -970,9 +972,9 @@
       </div>
 
       <div class="ticker" aria-label="Interests">
-        <span>Games & experiments</span><i aria-hidden="true">✳</i>
-        <span>Hardware & repair</span><i aria-hidden="true">✳</i>
-        <span>Music & making</span><i class="ticker-extra" aria-hidden="true">✳</i>
+        <span>Software & systems</span><i aria-hidden="true">✳</i>
+        <span>Machine learning</span><i aria-hidden="true">✳</i>
+        <span>Hardware & repair</span><i class="ticker-extra" aria-hidden="true">✳</i>
         <span class="ticker-extra">Always a work in progress</span>
       </div>
 
@@ -1024,9 +1026,31 @@
           <article class="project project-stack">
             <!-- two projects share this tile, one above the other -->
             <div class="stack-item">
+            <a class="project-art-link" href="https://github.com/phonehseng/Letters" target="_blank" rel="noopener noreferrer" aria-label="Open Letters on GitHub">
+            <div class="project-art art-doc hud-top" data-shot="letters" data-clip="letters-demo.mp4" role="img" aria-label="Letters opening a lab report, finding a word, and adding a sentence to a paragraph in the page's own font">
+              <span class="art-corner">02 — EDIT</span>
+              <span class="art-chip on-light">GitHub ↗</span>
+              <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
+                <rect x="70" y="24" width="120" height="140" rx="3" fill="#ffffff" stroke="#b9c3d3" stroke-width="1.5"/>
+                <path d="M84 44H160M84 58H176M84 70H170M84 82H150" stroke="#2c4fa3" stroke-width="3"/>
+                <path d="M84 98H176M84 110H166M84 122H172" stroke="#c2cbda" stroke-width="3"/>
+                <rect x="204" y="24" width="56" height="140" rx="3" fill="#f7f9fd" stroke="#b9c3d3" stroke-width="1.5"/>
+                <path d="M214 42H250M214 60H244M214 78H248" stroke="#9fb0cf" stroke-width="3"/>
+              </svg>
+            </div>
+            </a>
+            <div class="project-meta"><span>SYSTEMS · DESKTOP</span><span>Public repo</span></div>
+            <h3>Letters</h3>
+            <p>A desktop PDF editor and office suite for Windows and macOS, written mostly in Rust. It edits a PDF’s own text in its own fonts, renders pages as tiles so a 500-page file feels like a 5-page one, and converts PDF to Word with every line kept within 1/100 of a point. Also forms and signing, real redaction, OCR, spreadsheets with formulas, and slides, all offline.</p>
+            <p class="project-tags">Rust / PDFium / Tauri / Svelte / TypeScript</p>
+            <a class="project-link" href="https://github.com/phonehseng/Letters" target="_blank" rel="noopener noreferrer">
+              <span>Explore Letters</span><span class="arrow" aria-hidden="true">↗</span>
+            </a>
+            </div>
+            <div class="stack-item">
             <a class="project-art-link" href="https://github.com/phonehseng/atlas" target="_blank" rel="noopener noreferrer" aria-label="Open Atlas on GitHub">
             <div class="project-art art-media" data-shot="atlas" data-clip="atlas-demo.webp" role="img" aria-label="Atlas: browsing Home, a poster preview, and a title page opening">
-              <span class="art-corner">02 — WATCH</span>
+              <span class="art-corner">03 — STREAM</span>
               <span class="art-chip">GitHub ↗</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
                 <rect x="58" y="62" width="40" height="62" rx="4" fill="#2f55b5"/><rect x="106" y="62" width="40" height="62" rx="4" fill="#4f7ff0"/>
@@ -1035,107 +1059,74 @@
               </svg>
             </div>
             </a>
-            <div class="project-meta"><span>HOME MEDIA</span><span>Public repo</span></div>
+            <div class="project-meta"><span>SELF-HOSTING · INFRA</span><span>Public repo</span></div>
             <h3>Atlas</h3>
-            <p>A Netflix-style home theatre for my own films and shows, plus one guided installer for the whole media server behind it: Jellyfin, Seerr, Sonarr, Radarr, a VPN and Tailscale. Request a film from your phone and it’s in the library minutes later.</p>
-            <p class="project-tags">Python / Jellyfin / Tailscale / Android TV</p>
+            <p>A self-hosted media platform: a desktop player and an 11 MB guided installer that sets up and wires together about ten services (Jellyfin, Sonarr, Radarr, a VPN-bound downloader, Tailscale). Native services on Windows, Docker containers on Linux and Raspberry Pi, with health checks that diagnose and repair a stuck pipeline.</p>
+            <p class="project-tags">Python / Go / JavaScript / Docker / Kotlin</p>
             <a class="project-link" href="https://github.com/phonehseng/atlas" target="_blank" rel="noopener noreferrer">
               <span>Explore Atlas</span><span class="arrow" aria-hidden="true">↗</span>
-            </a>
-            </div>
-            <div class="stack-item">
-            <!-- the sketch stays as a fallback, the screenshot from the assets block is placed over it -->
-            <!-- the game itself lives on this site, so the clip opens it rather than the repo -->
-            <a class="project-art-link" href="https://phonehseng.com/legend-of-wildmoor/" target="_blank" rel="noopener noreferrer" aria-label="Play Legend of Wildmoor">
-            <div class="project-art art-game" data-shot="wildmoor" data-clip="wildmoor.mp4" role="img" aria-label="Legend of Wildmoor title screen">
-              <span class="art-corner">03 — PLAY</span>
-              <span class="art-chip">Play ↗</span>
-              <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
-                <path d="M20 147H280M50 147V137H108V147M169 147V121H230V147" stroke="#617159" stroke-width="1.5"/>
-                <path d="M41 78H108V84H41ZM121 103H167V109H121Z" fill="#859675"/>
-                <path d="M245 145V85Q245 76 254 76H269V145" fill="#bdcaa7" stroke="#617159" stroke-width="1.5"/>
-                <path d="M251 143V89H263V143" fill="#758365"/>
-                <path d="M71 137V129H66V116H72V108H87V116H94V129H88V137" fill="#b7422b"/>
-                <path d="M78 115H81V120H78M87 115H90V120H87" stroke="#fff9e9" stroke-width="2"/>
-                <path d="M184 65l5 7-5 7-5-7Z" fill="#b7422b"/>
-                <path d="M201 50l5 7-5 7-5-7Z" fill="#b7422b" opacity=".5"/>
-                <path d="M29 32H65M47 25V39M231 30H253M242 24V36" stroke="#b4c19e" stroke-width="1.3"/>
-              </svg>
-            </div>
-            </a>
-            <div class="project-meta"><span>GAME DEVELOPMENT</span><span>Public repo</span></div>
-            <h3>Legend of Wildmoor</h3>
-            <p>A 3D open-world browser game with procedural world generation, quests and progression, boss encounters, and save/load. Serverless peer-to-peer multiplayer lets friends join by code and fight bosses together.</p>
-            <p class="project-tags">JavaScript / Three.js / WebRTC</p>
-            <a class="project-link" href="https://github.com/phonehseng/legend-of-wildmoor" target="_blank" rel="noopener noreferrer">
-              <span>Explore Legend of Wildmoor</span><span class="arrow" aria-hidden="true">↗</span>
             </a>
             </div>
           </article>
 
           <article class="project project-stack">
-            <!-- two game-playing bots share this tile, one above the other -->
+            <!-- two projects share this tile, one above the other -->
             <div class="stack-item">
-            <a class="project-art-link" href="https://github.com/phonehseng/Fnaf-automations" target="_blank" rel="noopener noreferrer" aria-label="Open Horror Game Bot on GitHub">
-            <div class="project-art art-bot hud-top" data-shot="horrorBot" data-clip="horror-game-bot.webp" role="img" aria-label="The bot playing Custom Night 20/20/20/20, shutting a door just before an animatronic moves">
-              <span class="art-corner">04 — AUTOMATE</span>
+            <div class="project-art art-ml" role="img" aria-label="A small neural network diagram feeding a value estimate">
+              <span class="art-corner">04 — LEARN</span>
+              <span class="art-chip">Private repo</span>
+              <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
+                <g stroke="#7f95c9" stroke-width="1" opacity=".55">
+                  <path d="M70 50L150 40M70 50L150 75M70 50L150 110M70 50L150 145M70 90L150 40M70 90L150 75M70 90L150 110M70 90L150 145M70 130L150 40M70 130L150 75M70 130L150 110M70 130L150 145"/>
+                  <path d="M150 40L220 70M150 75L220 70M150 110L220 70M150 145L220 70M150 40L220 115M150 75L220 115M150 110L220 115M150 145L220 115"/>
+                  <path d="M220 70L262 92M220 115L262 92"/>
+                </g>
+                <g fill="#dbe8fc"><circle cx="70" cy="50" r="7"/><circle cx="70" cy="90" r="7"/><circle cx="70" cy="130" r="7"/></g>
+                <g fill="#4f7ff0"><circle cx="150" cy="40" r="7"/><circle cx="150" cy="75" r="7"/><circle cx="150" cy="110" r="7"/><circle cx="150" cy="145" r="7"/></g>
+                <g fill="#2f55b5"><circle cx="220" cy="70" r="7"/><circle cx="220" cy="115" r="7"/></g>
+                <circle cx="262" cy="92" r="9" fill="#ff8a1f"/>
+              </svg>
+            </div>
+            <div class="project-meta"><span>MACHINE LEARNING</span><span>Private repo</span></div>
+            <h3>Self-Play Learning Lab</h3>
+            <p>A neural network written from scratch (no ML library) that learns chess only from games against itself, using temporal-difference learning, TD(λ), in a background Web Worker, and charts its loss, win rate and the piece values it discovers on its own, which settle near the classical 1/3/3/5/9. It sits inside a local-AI tutor that pairs Stockfish analysis with a local LLM for coaching.</p>
+            <p class="project-tags">JavaScript / Reinforcement learning / Web Workers / Python</p>
+            </div>
+            <div class="stack-item">
+            <a class="project-art-link" href="https://github.com/phonehseng/DisplayFlip" target="_blank" rel="noopener noreferrer" aria-label="Open DisplayFlip on GitHub">
+            <div class="project-art art-bot" role="img" aria-label="Two displays with a window moving between them">
+              <span class="art-corner">05 — SYSTEMS</span>
               <span class="art-chip">GitHub ↗</span>
               <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
-                <rect x="46" y="28" width="208" height="120" rx="5" fill="#30382f"/>
-                <rect x="55" y="37" width="190" height="98" rx="1" stroke="#7b8d71"/>
-                <path d="M60 62H239M60 85H239M60 108H239" stroke="#7b8d71" opacity=".12"/>
-                <path d="M98 148V159H201V148M91 159H210" stroke="#6b7364" stroke-width="1.5"/>
-                <path d="M99 57H156V90H99ZM171 57H213V109H171ZM99 102H141V121H99Z" stroke="#9aaa88" stroke-width="1.5"/>
-                <path d="M156 74H171M120 90V102M141 110H171" stroke="#9aaa88" stroke-width="1.5"/>
-                <circle cx="118" cy="72" r="6" fill="#d4dea9"/>
-                <circle cx="118" cy="72" r="12" stroke="#d4dea9" stroke-dasharray="2 3"/>
-                <rect x="64" y="119" width="23" height="6" fill="#d4dea9"/>
-                <path d="M64 44H99" stroke="#aeb999"/>
-                <circle cx="234" cy="45" r="2" fill="#d8a07d"/>
+                <rect x="40" y="40" width="120" height="76" rx="4" fill="#30382f" stroke="#7b8d71" stroke-width="1.5"/>
+                <rect x="176" y="56" width="84" height="56" rx="4" fill="#30382f" stroke="#7b8d71" stroke-width="1.5"/>
+                <path d="M88 116V132H112V116M80 132H120M210 112V126H226V112M204 126H232" stroke="#6b7364" stroke-width="1.5"/>
+                <rect x="58" y="54" width="56" height="34" rx="2" fill="#d4dea9"/>
+                <path d="M126 70H190" stroke="#d8a07d" stroke-width="1.5" stroke-dasharray="3 4"/>
+                <path d="M184 64l8 6-8 6" stroke="#d8a07d" stroke-width="1.5"/>
               </svg>
             </div>
             </a>
-            <div class="project-meta"><span>COMPUTER VISION</span><span>Public repo</span></div>
-            <h3>Horror Game Bot</h3>
-            <p>A Python bot that plays Five Nights at Freddy’s on its own, using OpenCV to watch the screen in real time and power-efficient decision logic to manage cameras, doors, and lights. It beats Custom Night 20/20/20/20, every animatronic at maximum: 13 of its last 20 live runs, and 1,000 of 1,000 in its simulator.</p>
-            <p class="project-tags">Python / OpenCV / Automation</p>
-            <a class="project-link" href="https://github.com/phonehseng/Fnaf-automations" target="_blank" rel="noopener noreferrer">
-              <span>Explore Horror Game Bot</span><span class="arrow" aria-hidden="true">↗</span>
-            </a>
-            </div>
-            <div class="stack-item">
-            <a class="project-art-link" href="https://github.com/phonehseng/btd6bot" target="_blank" rel="noopener noreferrer" aria-label="Open BTD6 Bot on GitHub">
-            <div class="project-art art-bot" data-shot="btd6bot" role="img" aria-label="Bloons TD 6 victory screen after a game the bot played">
-              <span class="art-corner">05 — AUTOMATE</span>
-              <span class="art-chip">GitHub ↗</span>
-              <svg viewBox="0 0 300 180" fill="none" aria-hidden="true">
-                <path d="M30 120C80 60 130 150 180 90S260 60 280 70" stroke="#7b8d71" stroke-width="10" opacity=".5"/>
-                <circle cx="110" cy="80" r="12" fill="#d4dea9"/>
-                <circle cx="200" cy="120" r="9" fill="#b7422b"/>
-                <circle cx="230" cy="80" r="9" fill="#d8a07d"/>
-              </svg>
-            </div>
-            </a>
-            <div class="project-meta"><span>COMPUTER VISION</span><span>Public repo</span></div>
-            <h3>BTD6 Bot</h3>
-            <p>Plays Bloons TD 6 unattended overnight from the screen alone: it levels a fresh account, picks the next map by expected wins per hour, and recovers from crashes under a watchdog.</p>
-            <p class="project-tags">Python / OpenCV / OCR / Windows</p>
-            <a class="project-link" href="https://github.com/phonehseng/btd6bot" target="_blank" rel="noopener noreferrer">
-              <span>Explore BTD6 Bot</span><span class="arrow" aria-hidden="true">↗</span>
+            <div class="project-meta"><span>SYSTEMS · C++</span><span>Public repo</span></div>
+            <h3>DisplayFlip</h3>
+            <p>One-button display switching for Windows in native C++ and the Win32 display APIs: a ~770 KB exe using ~2 MB of RAM that adds about 20 ms to Windows’ own mode switch. Monitors are identified by EDID, windows return to where they were, and audio follows the active display.</p>
+            <p class="project-tags">C++ / Win32 / CLI / Stream Deck SDK</p>
+            <a class="project-link" href="https://github.com/phonehseng/DisplayFlip" target="_blank" rel="noopener noreferrer">
+              <span>Explore DisplayFlip</span><span class="arrow" aria-hidden="true">↗</span>
             </a>
             </div>
           </article>
 
         </div>
 
-        <p class="eyebrow muted tools-label">Smaller tools</p>
+        <p class="eyebrow muted tools-label">Smaller projects</p>
         <div class="tools">
           <article class="tool">
-            <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="13" height="9" rx="1.5"/><rect x="11" y="9" width="11" height="8" rx="1.5"/><path d="M6 20h6M9 13v7"/></svg></span>
+            <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span>
             <div>
-              <h3>DisplayFlip</h3>
-              <p>One button turns the TV on or switches whole display setups, with windows and sound following. A ~770 KB native exe; a TV switch takes under a second.</p>
-              <a href="https://github.com/phonehseng/DisplayFlip" target="_blank" rel="noopener noreferrer">C++ · GitHub ↗</a>
+              <h3>Computer-vision agents</h3>
+              <p>Real-time agents that act from the screen alone with OpenCV and OCR, backed by a timing model validated 1,000 of 1,000 times in simulation, and a watchdog that recovers from crashes during unattended runs.</p>
+              <a href="https://github.com/phonehseng/Fnaf-automations" target="_blank" rel="noopener noreferrer">Python · GitHub ↗</a>
             </div>
           </article>
           <article class="tool">
@@ -1147,16 +1138,16 @@
             </div>
           </article>
           <article class="tool">
-            <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3Z"/></svg></span>
+            <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7Z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></span>
             <div>
-              <h3>Explainer videos</h3>
-              <p>The animation engines behind the bots’ videos: HTML animations rendered to mp4 frame by frame, with real data and footage from the bots.</p>
-              <a href="https://github.com/phonehseng/btd6bot-video" target="_blank" rel="noopener noreferrer">BTD6 ↗</a><a href="https://github.com/phonehseng/fnaf-automations-videos" target="_blank" rel="noopener noreferrer">FNAF ↗</a>
+              <h3>3D in the browser</h3>
+              <p>A Three.js open world with procedural terrain generation, save/load, and serverless peer-to-peer networking over WebRTC with join-by-code sessions.</p>
+              <a href="https://github.com/phonehseng/legend-of-wildmoor" target="_blank" rel="noopener noreferrer">JavaScript · GitHub ↗</a>
             </div>
           </article>
         </div>
         <div class="project-note">
-          <span>All of these are open on GitHub.</span>
+          <span>All public code is on GitHub.</span>
         </div>
       </section>
 
@@ -1168,13 +1159,13 @@
           </div>
           <p class="about-title">I moved to Virginia 3 years ago,<br><em>from New York City</em></p>
           <div class="about-copy">
-            <p>I’m currently studying computer science at Virginia Tech. I was born in Queens and went to NEST+M and then Brooklyn Technical High School briefly. I like projects that turn an idea into something I can actually play with.</p>
-            <p>At Micro Center, I diagnosed and repaired gaming PCs, laptops, and Apple devices, and picked up vendor repair certifications along the way. Aside from computer stuff, I’ve taught guitar, tutored students, and helped paint and assemble public art.</p>
+            <p>I’m currently studying computer science at Virginia Tech. I was born in Queens and went to NEST+M and then Brooklyn Technical High School briefly. I like projects that turn an idea into software people can actually use.</p>
+            <p>At Micro Center, I diagnosed and repaired desktop PCs, laptops, and Apple devices, and picked up vendor repair certifications along the way. Aside from computer stuff, I’ve taught guitar, tutored students, and helped paint and assemble public art.</p>
             <p>I like playing around with machine learning and training AI, along with self-hosting servers and homelab equipment. I enjoy utilizing AI often, to help review and revise big batches of code to even outlining skeletons of a big project.</p>
           </div>
           <ul class="skills" aria-label="Skills">
-            <li>Python</li><li>JavaScript</li><li>HTML</li><li>C / C++</li><li>Three.js</li><li>OpenCV</li>
-            <li>Unity</li><li>Docker</li><li>Linux</li><li>PC repair</li>
+            <li>Python</li><li>C / C++</li><li>Rust</li><li>JavaScript / TypeScript</li><li>Machine learning</li><li>OpenCV</li>
+            <li>Docker</li><li>Linux</li><li>Git</li><li>Google Cloud</li>
           </ul>
           <!-- filled from the facts list in the script -->
           <ul class="facts" id="facts" aria-label="A few small facts"></ul>
@@ -1202,7 +1193,7 @@
               <time>APR — AUG 2026</time>
               <div>
                 <h3><img class="exp-logo" data-asset="logoMicroCenter" alt="">Micro Center · Service Technician</h3>
-                <p>Board-level diagnostics and repair of gaming PCs, laptops, and Apple devices. 12+ tickets a day. Apple, HP, Dell, Lenovo, and ASUS repair certified.</p>
+                <p>Board-level diagnostics and repair of desktop PCs, laptops, and Apple devices. 12+ tickets a day. Apple, HP, Dell, Lenovo, and ASUS repair certified.</p>
               </div>
             </li>
             <li>
@@ -1242,7 +1233,7 @@
       <section class="contact" aria-labelledby="contact-heading">
         <div>
           <h2 id="contact-heading">Let’s make <em>something.</em></h2>
-          <p>Have a project, a question, or a good game recommendation?</p>
+          <p>Hiring for a software engineering internship, or have a project or a question?</p>
         </div>
         <a class="contact-link" href="mailto:phone@vt.edu">phone@vt.edu <span class="arrow" aria-hidden="true">↗</span></a>
       </section>
@@ -1261,7 +1252,6 @@
       <div class="footer-left">
         <span>© <span id="year">2026</span> Phone Hseng</span>
         <span>Made with curiosity.</span>
-        <a href="/sms/">Text Atlas</a>
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
       </div>
@@ -1277,9 +1267,9 @@
 
     // the right now board under the hero
     const now = [
-      { label: 'Building',   text: 'Atlas, a home theatre for my own films' },
+      { label: 'Building',   text: 'Letters, a PDF editor and office suite in Rust' },
       { label: 'Learning',   text: 'C++ and systems at Virginia Tech' },
-      { label: 'Playing',    text: 'Five Nights at Freddy’s (for research)' },
+      { label: 'Exploring',  text: 'Reinforcement learning and local LLMs' },
       { label: 'Off screen', text: 'Guitar, ukulele, and taking PCs apart' }
     ];
 
@@ -1287,7 +1277,7 @@
     const facts = [
       'Taught guitar & ukulele for two years',
       'Apple, HP, Dell, Lenovo & ASUS repair certified',
-      'Built a 3D open world that runs in a browser tab',
+      'Wrote a neural network from scratch that taught itself chess',
       '1st place overall + Best Use of Google Cloud at a GDG hackathon',
       'Employee of the Month, Micro Center, Dec 2025',
       'Helped paint and assemble public art'
@@ -1818,7 +1808,8 @@
         horrorBot: 'horror-game-bot.jpg',
         clearHome: 'clear-home-hd.jpg',
         atlas: 'atlas-demo.jpg',
-        btd6bot: 'btd6bot.jpg'
+        btd6bot: 'btd6bot.jpg',
+        letters: 'letters-demo.jpg'
       }
     };
   </script>

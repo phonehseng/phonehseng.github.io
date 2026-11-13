@@ -33,36 +33,6 @@
     <p><b>Relevant Coursework:</b> Software Design and Data Structures, Intro to Software Design, Intro to Problem Solving in CS, Intro to Computer Organization I, Foundations of Engineering Practice, Calculus I, Calculus II</p>
   </div>
 
-  <h2>Experience</h2>
-  <div class="entry">
-    <div class="row"><span>Service Technician</span><span>Apr 2026 – Aug 2026</span></div>
-    <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
-    <ul>
-      <li>Diagnosed and repaired customer gaming PCs, laptops, and Apple devices, performing board-level diagnostics, hardware/software testing, game performance and stability testing, and GPU/driver troubleshooting</li>
-      <li>Resolved 12+ repair tickets per day end-to-end, from intake and diagnosis through repair, testing, and customer handoff</li>
-      <li>Earned vendor-authorized repair certifications from Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS</li>
-      <li>Advised customers on hardware upgrades, component compatibility, and custom system builds</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row"><span>Customer Service Representative</span><span>Aug 2025 – Apr 2026</span></div>
-    <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
-    <ul>
-      <li>Processed 20+ transactions per hour (chain average: 16.5) while maintaining a 91% customer capture rate across PC components, prebuilt systems, and peripherals</li>
-      <li>Ranked in the top 100 warranty sellers chainwide, attaching service plans on 13% of transactions vs. a 6.8% chain average and generating $5.03 in plan revenue per customer (chain average: $2.70)</li>
-      <li>Scored 100/100 in every measured customer satisfaction category (greeting, welcome, transaction efficiency, thank-you), above chain averages of 90-95</li>
-      <li>Received the store's GEAR Award (Employee of the Month) for December 2025; promoted to Service Technician in April 2026</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row"><span>Member Services Representative</span><span>Oct 2024 – Aug 2025</span></div>
-    <div class="row sub"><span>Planet Fitness</span><span>Chantilly, VA</span></div>
-    <ul>
-      <li>Handled front-desk operations including member check-in, enrollment, billing transactions, and cancellations</li>
-      <li>Resolved member account and billing questions in person and by phone, escalating to club management when needed</li>
-    </ul>
-  </div>
-
   <h2>Projects</h2>
   <div class="entry">
     <div class="row"><span>Clear Home <span class="sub" style="font-weight:normal">| Python, Flask, Gemma 4, Google Cloud Run, Google Maps</span></span><span class="url">clearhome.live | github.com/phonehseng/clearhome</span></div>
@@ -73,25 +43,63 @@
     </ul>
   </div>
   <div class="entry">
-    <div class="row"><span>Legend of Wildmoor <span class="sub" style="font-weight:normal">| JavaScript, Three.js, WebRTC</span></span><span class="url">github.com/phonehseng/legend-of-wildmoor</span></div>
+    <div class="row"><span>Letters <span class="sub" style="font-weight:normal">| Rust, PDFium, Tauri, Svelte, TypeScript</span></span><span class="url">github.com/phonehseng/Letters</span></div>
     <ul>
-      <li>Built a 3D open-world browser game with procedural world generation, quest and progression systems, boss encounters, and a save/load persistence layer</li>
-      <li>Implemented serverless peer-to-peer multiplayer with join-by-code sessions, synchronizing boss fights across players while keeping each player's quests and stats independent</li>
+      <li>Building a cross-platform desktop PDF editor and office suite for Windows and macOS, structured as 20+ Rust crates (rendering, text editing, conversion, forms, OCR, search) behind a Tauri and Svelte interface</li>
+      <li>Wrote an exact PDF-to-Word converter that keeps every line in place to within 1/100 of a point on 12 of 13 test documents, and in-place editing of a PDF's own text in its embedded fonts; pages render as prioritized tiles so large files stay responsive</li>
     </ul>
   </div>
   <div class="entry">
-    <div class="row"><span>Game-Playing Bots <span class="sub" style="font-weight:normal">| Python, OpenCV, OCR</span></span><span class="url">github.com/phonehseng/Fnaf-automations | github.com/phonehseng/btd6bot</span></div>
+    <div class="row"><span>Self-Play Reinforcement Learning Lab <span class="sub" style="font-weight:normal">| JavaScript, Web Workers, Python</span></span><span class="url">Private repository</span></div>
     <ul>
-      <li>Built a bot that plays Five Nights at Freddy's from the screen alone, timing door, light, and camera checks to the game's animatronic movement timers to finish nights with no jumpscares and maximum power left</li>
-      <li>Built a bot that plays Bloons TD 6 unattended overnight, choosing maps by expected wins per hour, leveling a fresh account, and recovering from crashes and hangs through a watchdog supervisor</li>
+      <li>Implemented a neural network and backpropagation from scratch (no ML library) that learns chess purely from self-play with TD(&lambda;), training in a Web Worker with configurable layers, learning rate, and exploration</li>
+      <li>Probed the trained network by measuring evaluation drops when pieces are removed; learned piece values converge toward the classical 1/3/3/5/9 without being given them</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>DisplayFlip <span class="sub" style="font-weight:normal">| C++, Win32 API</span></span><span class="url">github.com/phonehseng/DisplayFlip</span></div>
+    <ul>
+      <li>Built a native Windows display-switching utility (~770 KB executable, ~2 MB RAM) adding ~20 ms over the OS mode switch; identifies monitors by EDID and restores window layouts and audio routing per display profile</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>Atlas <span class="sub" style="font-weight:normal">| Python, Go, JavaScript, Docker</span></span><span class="url">github.com/phonehseng/atlas</span></div>
+    <ul>
+      <li>Built a self-hosted media platform and guided installer that deploys and connects about ten services (Jellyfin, Sonarr, Radarr, VPN, Tailscale) natively on Windows or as Docker containers on Linux, with health checks that diagnose and repair failures</li>
+    </ul>
+  </div>
+
+  <h2>Experience</h2>
+  <div class="entry">
+    <div class="row"><span>Service Technician</span><span>Apr 2026 – Aug 2026</span></div>
+    <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
+    <ul>
+      <li>Diagnosed and repaired customer desktop PCs, laptops, and Apple devices, performing board-level diagnostics, hardware/software testing, performance and stability testing, and GPU/driver troubleshooting</li>
+      <li>Resolved 12+ repair tickets per day end-to-end, from intake and diagnosis through repair, testing, and customer handoff</li>
+      <li>Earned vendor-authorized repair certifications from Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>Customer Service Representative</span><span>Aug 2025 – Apr 2026</span></div>
+    <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
+    <ul>
+      <li>Processed 20+ transactions per hour (chain average: 16.5) while maintaining a 91% customer capture rate across PC components, prebuilt systems, and peripherals</li>
+      <li>Ranked in the top 100 warranty sellers chainwide, attaching service plans on 13% of transactions vs. a 6.8% chain average and generating $5.03 in plan revenue per customer (chain average: $2.70)</li>
+      <li>Received the store's GEAR Award (Employee of the Month) for December 2025; promoted to Service Technician in April 2026</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>Member Services Representative</span><span>Oct 2024 – Aug 2025</span></div>
+    <div class="row sub"><span>Planet Fitness</span><span>Chantilly, VA</span></div>
+    <ul>
+      <li>Handled front-desk operations including member check-in, enrollment, billing transactions, and cancellations</li>
     </ul>
   </div>
 
   <h2>Skills</h2>
-  <p><b>Languages:</b> Python, JavaScript, C, C++</p>
-  <p><b>Technologies:</b> Flask, Google Cloud Run, Gemma/Gemini APIs, Google Maps Platform, Three.js, WebGL, OpenCV, Unity, Linux (Ubuntu), Docker, home networking</p>
-  <p><b>Tools:</b> Git, Visual Studio, PyCharm, Microsoft Office, Astea Alliance</p>
-  <p><b>Hardware:</b> Diagnostics and repair of custom PCs, laptops, iPhones, and MacBooks, component compatibility and system builds</p>
-  <p><b>Certifications:</b> Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS authorized repair, CPR</p>
+  <p><b>Languages:</b> Python, C, C++, Rust, JavaScript, TypeScript</p>
+  <p><b>Technologies:</b> Machine learning (neural networks, reinforcement learning, LLM inference), OpenCV, Flask, Tauri, Svelte, Docker, Google Cloud Run, Gemma/Gemini APIs, Linux (Ubuntu), PC hardware diagnostics</p>
+  <p><b>Tools:</b> Git, GitHub Actions, Visual Studio, VS Code, PyCharm, Cargo</p>
+  <p><b>Certifications:</b> Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS authorized repair; CPR</p>
 </body>
 </html>
