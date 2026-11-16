@@ -780,6 +780,7 @@
     .tool p { margin: 0 0 6px; color: var(--muted); font-size: 12px; line-height: 1.7; }
     .tool a { font: 10px var(--mono); letter-spacing: .3px; color: var(--accent); text-decoration: none; margin-right: 12px; white-space: nowrap; }
     .tool a:hover { text-decoration: underline; }
+    .tool .tool-note { font: 10px var(--mono); letter-spacing: .3px; color: var(--muted); }
 
     @media (max-width: 950px) {
       .tools { grid-template-columns: 1fr; gap: 18px; }
@@ -1138,11 +1139,11 @@
             </div>
           </article>
           <article class="tool">
-            <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7Z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></span>
+            <span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></span>
             <div>
-              <h3>3D in the browser</h3>
-              <p>A Three.js open world with procedural terrain generation, save/load, and serverless peer-to-peer networking over WebRTC with join-by-code sessions.</p>
-              <a href="https://github.com/phonehseng/legend-of-wildmoor" target="_blank" rel="noopener noreferrer">JavaScript · GitHub ↗</a>
+              <h3>C compiler and runtime</h3>
+              <p>A C99 preprocessor, parser, type checker, linker and interpreter on a simulated 64-bit machine that matches gcc’s sizes, catching use-after-free, out-of-bounds access and leaks. 7,000+ tests.</p>
+              <span class="tool-note">Python · Private repo</span>
             </div>
           </article>
         </div>

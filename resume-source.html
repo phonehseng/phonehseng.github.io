@@ -39,33 +39,39 @@
     <ul>
       <li><b>Won 1st place overall and 1st place for Google Cloud usage</b> at GDG Build with AI × Hacktoberfest 2026 with a team of four, building an AI housing assistant that finds verified affordable homes, shelters, and rent help</li>
       <li>Served Gemma 4 from our own Cloud Run L4 GPU with a Gemini API fallback, streaming answers grounded only in a hand-verified list of 400+ records so the assistant cannot invent listings</li>
-      <li>Added map search and measured walking/transit times with Google Maps APIs, plus a daily job that finds new listings, checks their sources, and redeploys</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>C Compiler and Runtime (Cedar Vale) <span class="sub" style="font-weight:normal">| Python, C</span></span><span class="url">Private repository</span></div>
+    <ul>
+      <li>Built a C99 toolchain from scratch (preprocessor, lexer, parser, type checker, linker) and an interpreter on a simulated 64-bit LP64 machine whose type sizes and struct layouts match gcc; programs that run in it also build with <i>gcc -Wall -std=c99</i></li>
+      <li>Runtime detects null dereferences, out-of-bounds access, use-after-free, double frees, stack overflows, uninitialized reads and memory leaks with gcc/Valgrind-style diagnostics; plus a Bash-like shell with <i>make</i> and pipelines; 7,000+ tests</li>
+      <li>Added an optional local LLM tutor (Qwen, 2B&ndash;9B by hardware tier) whose code suggestions are compiled and run on a copy of the student's project before they are shown</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="row"><span>LocalAI <span class="sub" style="font-weight:normal">| Python, FastAPI, Ollama, PyTorch</span></span><span class="url">Private repository</span></div>
+    <ul>
+      <li>Built a private AI assistant that runs entirely on local GPU models, with tool calling across 35+ tool modules (email, calendar, files, web search, system control) and approval gates for risky actions</li>
+      <li>Implemented hybrid retrieval over personal documents (embeddings + BM25 + cross-encoder reranking, cited passages), LoRA fine-tuning from user corrections exported to GGUF, and Gymnasium/PPO reinforcement learning agents</li>
     </ul>
   </div>
   <div class="entry">
     <div class="row"><span>Letters <span class="sub" style="font-weight:normal">| Rust, PDFium, Tauri, Svelte, TypeScript</span></span><span class="url">github.com/phonehseng/Letters</span></div>
     <ul>
-      <li>Building a cross-platform desktop PDF editor and office suite for Windows and macOS, structured as 20+ Rust crates (rendering, text editing, conversion, forms, OCR, search) behind a Tauri and Svelte interface</li>
-      <li>Wrote an exact PDF-to-Word converter that keeps every line in place to within 1/100 of a point on 12 of 13 test documents, and in-place editing of a PDF's own text in its embedded fonts; pages render as prioritized tiles so large files stay responsive</li>
+      <li>Building a cross-platform desktop PDF editor and office suite as 21 Rust crates (rendering, text editing, conversion, OCR, search) behind a Tauri and Svelte interface; its PDF-to-Word converter keeps every line within 1/100 of a point on 12 of 13 test documents</li>
     </ul>
   </div>
   <div class="entry">
-    <div class="row"><span>Self-Play Reinforcement Learning Lab <span class="sub" style="font-weight:normal">| JavaScript, Web Workers, Python</span></span><span class="url">Private repository</span></div>
+    <div class="row"><span>Self-Play Learning Lab <span class="sub" style="font-weight:normal">| JavaScript, Web Workers</span></span><span class="url">Private repository</span></div>
     <ul>
-      <li>Implemented a neural network and backpropagation from scratch (no ML library) that learns chess purely from self-play with TD(&lambda;), training in a Web Worker with configurable layers, learning rate, and exploration</li>
-      <li>Probed the trained network by measuring evaluation drops when pieces are removed; learned piece values converge toward the classical 1/3/3/5/9 without being given them</li>
+      <li>Wrote a neural network and backpropagation from scratch (no ML library) that learns chess purely from self-play with TD(&lambda;); probing it shows learned piece values converging toward the classical 1/3/3/5/9</li>
     </ul>
   </div>
   <div class="entry">
     <div class="row"><span>DisplayFlip <span class="sub" style="font-weight:normal">| C++, Win32 API</span></span><span class="url">github.com/phonehseng/DisplayFlip</span></div>
     <ul>
-      <li>Built a native Windows display-switching utility (~770 KB executable, ~2 MB RAM) adding ~20 ms over the OS mode switch; identifies monitors by EDID and restores window layouts and audio routing per display profile</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row"><span>Atlas <span class="sub" style="font-weight:normal">| Python, Go, JavaScript, Docker</span></span><span class="url">github.com/phonehseng/atlas</span></div>
-    <ul>
-      <li>Built a self-hosted media platform and guided installer that deploys and connects about ten services (Jellyfin, Sonarr, Radarr, VPN, Tailscale) natively on Windows or as Docker containers on Linux, with health checks that diagnose and repair failures</li>
+      <li>Built a native Windows display-switching utility (~770 KB, ~2 MB RAM) adding ~20 ms over the OS mode switch; identifies monitors by EDID and restores window layouts and audio routing per profile</li>
     </ul>
   </div>
 
@@ -74,18 +80,15 @@
     <div class="row"><span>Service Technician</span><span>Apr 2026 – Aug 2026</span></div>
     <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
     <ul>
-      <li>Diagnosed and repaired customer desktop PCs, laptops, and Apple devices, performing board-level diagnostics, hardware/software testing, performance and stability testing, and GPU/driver troubleshooting</li>
-      <li>Resolved 12+ repair tickets per day end-to-end, from intake and diagnosis through repair, testing, and customer handoff</li>
-      <li>Earned vendor-authorized repair certifications from Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS</li>
+      <li>Diagnosed and repaired customer desktop PCs, laptops, and Apple devices, performing board-level diagnostics, hardware, software, and stability testing, and GPU/driver troubleshooting; 12+ tickets a day</li>
     </ul>
   </div>
   <div class="entry">
     <div class="row"><span>Customer Service Representative</span><span>Aug 2025 – Apr 2026</span></div>
     <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
     <ul>
-      <li>Processed 20+ transactions per hour (chain average: 16.5) while maintaining a 91% customer capture rate across PC components, prebuilt systems, and peripherals</li>
       <li>Ranked in the top 100 warranty sellers chainwide, attaching service plans on 13% of transactions vs. a 6.8% chain average and generating $5.03 in plan revenue per customer (chain average: $2.70)</li>
-      <li>Received the store's GEAR Award (Employee of the Month) for December 2025; promoted to Service Technician in April 2026</li>
+      <li>Employee of the Month (GEAR Award), December 2025; promoted to Service Technician in April 2026</li>
     </ul>
   </div>
   <div class="entry">
@@ -97,9 +100,9 @@
   </div>
 
   <h2>Skills</h2>
-  <p><b>Languages:</b> Python, C, C++, Rust, JavaScript, TypeScript</p>
-  <p><b>Technologies:</b> Machine learning (neural networks, reinforcement learning, LLM inference), OpenCV, Flask, Tauri, Svelte, Docker, Google Cloud Run, Gemma/Gemini APIs, Linux (Ubuntu), PC hardware diagnostics</p>
-  <p><b>Tools:</b> Git, GitHub Actions, Visual Studio, VS Code, PyCharm, Cargo</p>
+  <p><b>Languages &amp; Tools:</b> Python, C, C++, Rust, JavaScript, TypeScript; Git, GitHub Actions, Cargo, Visual Studio, VS Code</p>
+  <p><b>AI/ML:</b> LLMs and tool calling (Ollama), RAG, LoRA fine-tuning (PyTorch, PEFT), RL (Stable-Baselines3), OpenCV</p>
+  <p><b>Technologies:</b> Flask, Tauri, Svelte, Docker, Google Cloud Run, Gemma/Gemini APIs, Linux (Ubuntu), PC hardware diagnostics</p>
   <p><b>Certifications:</b> Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS authorized repair; CPR</p>
 </body>
 </html>
