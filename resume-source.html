@@ -6,7 +6,7 @@
 <style>
   @page { size: letter; margin: 0.36in 0.5in 0.32in; }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Times New Roman", Times, "Liberation Serif", serif; font-size: 10.4pt; line-height: 1.17; color: #000; }
+  body { margin: 0; font-family: "Times New Roman", Times, "Liberation Serif", serif; font-size: 11pt; line-height: 1.2; color: #000; }
   a { color: #000; }
   h1 { font-size: 19pt; text-align: center; margin: 0; }
   .contact { text-align: center; font-size: 9.6pt; margin: 1px 0 6px; }
@@ -31,47 +31,41 @@
     <div class="row"><span>B.S. in Computer Science</span><span>Aug 2026 – May 2028</span></div>
     <div class="row sub"><span>Virginia Tech</span><span>Blacksburg, VA</span></div>
     <p><b>Relevant Coursework:</b> Software Design and Data Structures, Intro to Software Design, Intro to Problem Solving in CS, Intro to Computer Organization I, Foundations of Engineering Practice, Calculus I, Calculus II</p>
+    <p><b>Activities:</b> Rock Climbing Club, Data Structures and Algorithms Club</p>
   </div>
 
   <h2>Projects</h2>
   <div class="entry">
     <div class="row"><span>Clear Home <span class="sub" style="font-weight:normal">| Python, Flask, Gemma 4, Google Cloud Run, Google Maps</span></span><span class="url">clearhome.live | github.com/phonehseng/clearhome</span></div>
     <ul>
-      <li><b>Won 1st place overall and 1st place for Google Cloud usage</b> at GDG Build with AI × Hacktoberfest 2026 with a team of four, building an AI housing assistant that finds verified affordable homes, shelters, and rent help</li>
-      <li>Served Gemma 4 from our own Cloud Run L4 GPU with a Gemini API fallback, streaming answers grounded only in a hand-verified list of 400+ records so the assistant cannot invent listings</li>
+      <li><b>Led a team of four to 1st place overall out of 23 teams, plus Best Use of Google Cloud</b>, at GDG Build with AI &times; Hacktoberfest 2026, building an AI assistant that helps people find affordable homes, shelters, and rent help</li>
+      <li>Coordinated the team's work, set up the shared GitHub repository, and wrote a Git guide so all four members could work in parallel on their own branches</li>
+      <li>Built a review page where teammates checked and approved each of 400+ listings, so the AI only answers from information the team had verified</li>
+      <li>Deployed the AI model on our own Google Cloud server with a backup API, and added map search with walking and transit times</li>
     </ul>
   </div>
   <div class="entry">
-    <div class="row"><span>C Compiler and Runtime (Cedar Vale) <span class="sub" style="font-weight:normal">| Python, C</span></span><span class="url">Private repository</span></div>
+    <div class="row"><span>C Compiler and Runtime <span class="sub" style="font-weight:normal">| Python, C</span></span><span class="url">github.com/phonehseng/pycc</span></div>
     <ul>
-      <li>Built a C99 toolchain from scratch (preprocessor, lexer, parser, type checker, linker) and an interpreter on a simulated 64-bit LP64 machine whose type sizes and struct layouts match gcc; programs that run in it also build with <i>gcc -Wall -std=c99</i></li>
-      <li>Runtime detects null dereferences, out-of-bounds access, use-after-free, double frees, stack overflows, uninitialized reads and memory leaks with gcc/Valgrind-style diagnostics; plus a Bash-like shell with <i>make</i> and pipelines; 7,000+ tests</li>
-      <li>Added an optional local LLM tutor (Qwen, 2B&ndash;9B by hardware tier) whose code suggestions are compiled and run on a copy of the student's project before they are shown</li>
+      <li>Built a C compiler and runtime from scratch that runs students' C programs and explains crashes and memory bugs in plain language, checked by 7,000+ automated tests</li>
     </ul>
   </div>
   <div class="entry">
     <div class="row"><span>LocalAI <span class="sub" style="font-weight:normal">| Python, FastAPI, Ollama, PyTorch</span></span><span class="url">Private repository</span></div>
     <ul>
-      <li>Built a private AI assistant that runs entirely on local GPU models, with tool calling across 35+ tool modules (email, calendar, files, web search, system control) and approval gates for risky actions</li>
-      <li>Implemented hybrid retrieval over personal documents (embeddings + BM25 + cross-encoder reranking, cited passages), LoRA fine-tuning from user corrections exported to GGUF, and Gymnasium/PPO reinforcement learning agents</li>
+      <li>Built a private AI assistant that runs on my own PC, searches my documents, uses 35+ tools (email, calendar, web search), asks before risky actions, and learns from my corrections</li>
     </ul>
   </div>
   <div class="entry">
-    <div class="row"><span>Letters <span class="sub" style="font-weight:normal">| Rust, PDFium, Tauri, Svelte, TypeScript</span></span><span class="url">github.com/phonehseng/Letters</span></div>
+    <div class="row"><span>Letters <span class="sub" style="font-weight:normal">| Rust, Tauri, Svelte, TypeScript</span></span><span class="url">github.com/phonehseng/Letters</span></div>
     <ul>
-      <li>Building a cross-platform desktop PDF editor and office suite as 21 Rust crates (rendering, text editing, conversion, OCR, search) behind a Tauri and Svelte interface; its PDF-to-Word converter keeps every line within 1/100 of a point on 12 of 13 test documents</li>
+      <li>Building a free PDF editor and office suite for students that edits a PDF's own text and converts PDFs to Word without moving a line, for Windows and macOS</li>
     </ul>
   </div>
   <div class="entry">
-    <div class="row"><span>Self-Play Learning Lab <span class="sub" style="font-weight:normal">| JavaScript, Web Workers</span></span><span class="url">Private repository</span></div>
+    <div class="row"><span>DisplayFlip <span class="sub" style="font-weight:normal">| C++</span></span><span class="url">github.com/phonehseng/DisplayFlip</span></div>
     <ul>
-      <li>Wrote a neural network and backpropagation from scratch (no ML library) that learns chess purely from self-play with TD(&lambda;); probing it shows learned piece values converging toward the classical 1/3/3/5/9</li>
-    </ul>
-  </div>
-  <div class="entry">
-    <div class="row"><span>DisplayFlip <span class="sub" style="font-weight:normal">| C++, Win32 API</span></span><span class="url">github.com/phonehseng/DisplayFlip</span></div>
-    <ul>
-      <li>Built a native Windows display-switching utility (~770 KB, ~2 MB RAM) adding ~20 ms over the OS mode switch; identifies monitors by EDID and restores window layouts and audio routing per profile</li>
+      <li>Built a small Windows app that switches between monitor and TV setups with one button, moving windows and sound along with the display</li>
     </ul>
   </div>
 
@@ -81,6 +75,7 @@
     <div class="row sub"><span>Micro Center</span><span>Fairfax, VA</span></div>
     <ul>
       <li>Diagnosed and repaired customer desktop PCs, laptops, and Apple devices, performing board-level diagnostics, hardware, software, and stability testing, and GPU/driver troubleshooting; 12+ tickets a day</li>
+      <li>Explained repairs to customers in plain terms and advised them on hardware upgrades and custom builds</li>
     </ul>
   </div>
   <div class="entry">
@@ -101,8 +96,8 @@
 
   <h2>Skills</h2>
   <p><b>Languages &amp; Tools:</b> Python, C, C++, Rust, JavaScript, TypeScript; Git, GitHub Actions, Cargo, Visual Studio, VS Code</p>
-  <p><b>AI/ML:</b> LLMs and tool calling (Ollama), RAG, LoRA fine-tuning (PyTorch, PEFT), RL (Stable-Baselines3), OpenCV</p>
-  <p><b>Technologies:</b> Flask, Tauri, Svelte, Docker, Google Cloud Run, Gemma/Gemini APIs, Linux (Ubuntu), PC hardware diagnostics</p>
+  <p><b>AI:</b> Local LLMs (Ollama), Gemma/Gemini APIs, document search, fine-tuning, OpenCV</p>
+  <p><b>Technologies:</b> Flask, FastAPI, Docker, Google Cloud Run, Linux, Tauri, Svelte, PC hardware repair</p>
   <p><b>Certifications:</b> Apple, HP, Dell, Lenovo (NGSP/DOA), and ASUS authorized repair; CPR</p>
 </body>
 </html>
