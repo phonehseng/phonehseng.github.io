@@ -362,8 +362,9 @@
       0%, 100% { transform: translateX(-6px) rotate(-2.5deg); }
       50% { transform: translateX(6px) rotate(2.5deg); }
     }
-    /* hokie maroon, the same in both themes */
-    .mascot .body { fill: #861f41; }
+    /* the bird's maroon and its darker right edge, the same in both themes */
+    .mascot .body { fill: #8e2a55; }
+    .mascot .shade { fill: #6a1d3f; }
 
     /* eyes that blink and follow the pointer */
     .mascot .face {
@@ -1035,27 +1036,29 @@
 
           <!-- the pixel mascot, it changes on its own every few seconds and on click -->
           <button class="mascot-button" id="mascot-button" type="button" aria-label="Say hello to the pixel Hokie Bird" hidden>
-            <!-- a blocky hokie bird, maroon feathers with a crest, orange bill and feet, red wattle -->
+            <!-- a blocky hokie bird on a 10 px grid: two crest tufts, a shaded right edge, a wide orange bill,
+                 a red tongue in the middle and orange feet -->
             <span class="mascot-float">
             <svg class="mascot" viewBox="0 0 160 160" aria-hidden="true" shape-rendering="crispEdges">
-              <path class="body" d="M60 5H70V15H60ZM85 0H95V15H85ZM105 5H115V15H105ZM45 15H125V25H135V45H145V105H135V120H35V105H25V45H35V25H45Z"/>
-              <path class="eyes" fill="#fff9e9" d="M45 35H65V60H45ZM105 35H125V60H105Z"/>
-              <path class="face" fill="#242820" d="M50 42H60V55H50ZM110 42H120V55H110Z"/>
-              <path fill="#e5751f" d="M35 65H135V85H125V95H45V85H35Z"/>
-              <path fill="#a34d12" d="M45 82H125V86H45Z"/>
-              <path fill="#c8102e" d="M100 92H115V115H100Z"/>
-              <path fill="#e5751f" d="M50 120H65V130H50ZM95 120H110V130H95ZM30 130H75V145H30ZM85 130H130V145H85Z"/>
+              <path class="body" d="M60 5H70V15H60ZM90 5H100V15H90ZM40 15H120V25H140V35H160V115H150V125H140V135H20V125H10V35H20V25H40Z"/>
+              <path class="shade" d="M150 35H160V115H150ZM140 115H150V125H140ZM130 125H140V135H130Z"/>
+              <path class="eyes" fill="#ffffff" d="M30 45H60V75H30ZM100 45H130V75H100Z"/>
+              <path class="face" fill="#111111" d="M40 55H50V65H40ZM110 55H120V65H110Z"/>
+              <path fill="#ea7a1e" d="M20 85H140V95H130V105H30V95H20Z"/>
+              <path fill="#d3203a" d="M70 105H90V125H70Z"/>
+              <path fill="#ea7a1e" d="M30 135H60V155H20V145H30ZM100 135H130V155H90V145H100Z"/>
             </svg>
             </span>
           </button>
           <noscript>
             <svg width="210" height="210" viewBox="0 0 160 160" role="img" aria-label="A pixel art Hokie Bird">
-              <path fill="#861f41" d="M60 5H70V15H60ZM85 0H95V15H85ZM105 5H115V15H105ZM45 15H125V25H135V45H145V105H135V120H35V105H25V45H35V25H45Z"/>
-              <path fill="#fff9e9" d="M45 35H65V60H45ZM105 35H125V60H105Z"/>
-              <path fill="#242820" d="M50 42H60V55H50ZM110 42H120V55H110Z"/>
-              <path fill="#e5751f" d="M35 65H135V85H125V95H45V85H35Z"/>
-              <path fill="#c8102e" d="M100 92H115V115H100Z"/>
-              <path fill="#e5751f" d="M50 120H65V130H50ZM95 120H110V130H95ZM30 130H75V145H30ZM85 130H130V145H85Z"/>
+              <path fill="#8e2a55" d="M60 5H70V15H60ZM90 5H100V15H90ZM40 15H120V25H140V35H160V115H150V125H140V135H20V125H10V35H20V25H40Z"/>
+              <path fill="#6a1d3f" d="M150 35H160V115H150ZM140 115H150V125H140ZM130 125H140V135H130Z"/>
+              <path fill="#ffffff" d="M30 45H60V75H30ZM100 45H130V75H100Z"/>
+              <path fill="#111111" d="M40 55H50V65H40ZM110 55H120V65H110Z"/>
+              <path fill="#ea7a1e" d="M20 85H140V95H130V105H30V95H20Z"/>
+              <path fill="#d3203a" d="M70 105H90V125H70Z"/>
+              <path fill="#ea7a1e" d="M30 135H60V155H20V145H30ZM100 135H130V155H90V145H100Z"/>
             </svg>
           </noscript>
 
@@ -1388,11 +1391,11 @@
     // the eyes it cycles through, only the pupils move so the bird keeps its colours
     // in order: looking ahead, a wink, wide eyed, a side glance, and half asleep
     const faces = [
-      'M50 42H60V55H50ZM110 42H120V55H110Z',
-      'M45 46H65V52H45ZM110 42H120V55H110Z',
-      'M52 38H58V46H52ZM112 38H118V46H112Z',
-      'M55 42H65V55H55ZM115 42H125V55H115Z',
-      'M45 48H65V60H45ZM105 48H125V60H105Z'
+      'M40 55H50V65H40ZM110 55H120V65H110Z',
+      'M30 57H60V63H30ZM110 55H120V65H110Z',
+      'M42 49H48V57H42ZM112 49H118V57H112Z',
+      'M50 55H60V65H50ZM120 55H130V65H120Z',
+      'M30 60H60V75H30ZM100 60H130V75H100Z'
     ];
 
     // what the mascot says, in order
